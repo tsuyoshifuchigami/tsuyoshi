@@ -11,9 +11,9 @@ $hidden1=$_POST["hidden1"];
 $pass_=$_POST["pass"];
 
 ##
-$dsn='mysql:dbname=tb220540db;host=localhost';
-$user='tb-220540';
-$password='KVEBP6a7ZL';
+$dsn='データベース名';
+$user='ユーザー名';
+$password='パスワード';
 ##
 
 $pdo=new PDO($dsn,$user,$password,array(PDO::ATTR_ERRMODE => 
