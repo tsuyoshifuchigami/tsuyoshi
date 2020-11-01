@@ -16,7 +16,6 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 pp=0
 Q=0
 
-
 columns=["num","racename","date","where","weather","condition","course","distance","money_r","ryou","yayaomo","omo","furyou","shiba","suna","hare","kumori","kosame","ame","koyuki","yuki","tyaku","waku","waku_1","waku_2","waku_3","waku_4","waku_5","waku_6","waku_7","waku_8","umaban","name","sex","boba","hinba","senba","age","age_2","age_3","age_4","age_5","age_6","age_7","age_8","age_9","age_10","age_11","age_12","j_weight","jockey","time","ozzu","h_weight","h_weight_c","trainer","owner","father","j_weight_c","distance_c","jockey_fuku","trainer_fuku","owner_fuku","f_condition","f_distance","kaisai","tousuu","zensoutimesa","money_c","zenagari","zenyes_f","zenno_f","zenyes_c","zenno_c","log_fuku","log_tan","fuku","tan"]
 
 race=pd.DataFrame(columns=columns)
@@ -105,84 +104,32 @@ for year in (range(2020, 2021)):#年
                                 h3=soup1.find_all('td')[21*b+3].text#馬名
                                 h3_u=soup1.find_all('td')[21*b+3].a.get('href')
                                 print(h3)
-                                
+                                waku_1=0.0
+                                waku_2=0.0
+                                waku_3=0.0
+                                waku_4=0.0
+                                waku_5=0.0
+                                waku_6=0.0
+                                waku_7=0.0
+                                waku_8=0.0
                                 if h1a=="1":
                                     waku_1=1.0
-                                    waku_2=0.0
-                                    waku_3=0.0
-                                    waku_4=0.0
-                                    waku_5=0.0
-                                    waku_6=0.0
-                                    waku_7=0.0
-                                    waku_8=0.0
                                 elif h1a=="2":
-                                    waku_1=0.0
                                     waku_2=1.0
-                                    waku_3=0.0
-                                    waku_4=0.0
-                                    waku_5=0.0
-                                    waku_6=0.0
-                                    waku_7=0.0
-                                    waku_8=0.0
                                 elif h1a=="3":
-                                    waku_1=0.0
-                                    waku_2=0.0
                                     waku_3=1.0
-                                    waku_4=0.0
-                                    waku_5=0.0
-                                    waku_6=0.0
-                                    waku_7=0.0
-                                    waku_8=0.0
                                 elif h1a=="4":
-                                    waku_1=0.0
-                                    waku_2=0.0
-                                    waku_3=0.0
                                     waku_4=1.0
-                                    waku_5=0.0
-                                    waku_6=0.0
-                                    waku_7=0.0
-                                    waku_8=0.0
                                 elif h1a=="5":
-                                    waku_1=0.0
-                                    waku_2=0.0
-                                    waku_3=0.0
-                                    waku_4=0.0
                                     waku_5=1.0
-                                    waku_6=0.0
-                                    waku_7=0.0
-                                    waku_8=0.0
                                 elif h1a=="6":
-                                    waku_1=0.0
-                                    waku_2=0.0
-                                    waku_3=0.0
-                                    waku_4=0.0
-                                    waku_5=0.0
                                     waku_6=1.0
-                                    waku_7=0.0
-                                    waku_8=0.0
                                 elif h1a=="7":
-                                    waku_1=0.0
-                                    waku_2=0.0
-                                    waku_3=0.0
-                                    waku_4=0.0
-                                    waku_5=0.0
-                                    waku_6=0.0
                                     waku_7=1.0
-                                    waku_8=0.0
                                 elif h1a=="8":
-                                    waku_1=0.0
-                                    waku_2=0.0
-                                    waku_3=0.0
-                                    waku_4=0.0
-                                    waku_5=0.0
-                                    waku_6=0.0
-                                    waku_7=0.0
                                     waku_8=1.0
                                 else:
                                     print(pro[111])
-
-
-
                                 y=soup1.find_all('div',attrs={'class','Result_Pay_Back'})[0].text.split()
                                 for c in range(len(y))[::-1]:#複勝
                                     if y[c]==h2a:
@@ -199,161 +146,42 @@ for year in (range(2020, 2021)):#年
                                     h4bb=h4_[1]+h4_[2]
                                 else:
                                     h4bb=h4_[1]
+                                
+                                age_2=0.0
+                                age_3=0.0
+                                age_4=0.0
+                                age_5=0.0
+                                age_6=0.0
+                                age_7=0.0
+                                age_8=0.0
+                                age_9=0.0
+                                age_10=0.0
+                                age_11=0.0
+                                age_12=0.0
+                                age_13=0.0
                                 if h4bb=="2":
                                     age_2=1.0
-                                    age_3=0.0
-                                    age_4=0.0
-                                    age_5=0.0
-                                    age_6=0.0
-                                    age_7=0.0
-                                    age_8=0.0
-                                    age_9=0.0
-                                    age_10=0.0
-                                    age_11=0.0
-                                    age_12=0.0
-                                    age_13=0.0
                                 elif h4bb=="3":
-                                    age_2=0.0
                                     age_3=1.0
-                                    age_4=0.0
-                                    age_5=0.0
-                                    age_6=0.0
-                                    age_7=0.0
-                                    age_8=0.0
-                                    age_9=0.0
-                                    age_10=0.0
-                                    age_11=0.0
-                                    age_12=0.0
-                                    age_13=0.0
                                 elif h4bb=="4":
-                                    age_2=0.0
-                                    age_3=0.0
                                     age_4=1.0
-                                    age_5=0.0
-                                    age_6=0.0
-                                    age_7=0.0
-                                    age_8=0.0
-                                    age_9=0.0
-                                    age_10=0.0
-                                    age_11=0.0
-                                    age_12=0.0
-                                    age_13=0.0
                                 elif h4bb=="5":
-                                    age_2=0.0
-                                    age_3=0.0
-                                    age_4=0.0
-                                    age_5=1.0
-                                    age_6=0.0
-                                    age_7=0.0
-                                    age_8=0.0
-                                    age_9=0.0
-                                    age_10=0.0
-                                    age_11=0.0
-                                    age_12=0.0
-                                    age_13=0.0
+                                    age_5=1.0  
                                 elif h4bb=="6":
-                                    age_2=0.0
-                                    age_3=0.0
-                                    age_4=0.0
-                                    age_5=0.0
                                     age_6=1.0
-                                    age_7=0.0
-                                    age_8=0.0
-                                    age_9=0.0
-                                    age_10=0.0
-                                    age_11=0.0
-                                    age_12=0.0
-                                    age_13=0.0
                                 elif h4bb=="7":
-                                    age_2=0.0
-                                    age_3=0.0
-                                    age_4=0.0
-                                    age_5=0.0
-                                    age_6=0.0
                                     age_7=1.0
-                                    age_8=0.0
-                                    age_9=0.0
-                                    age_10=0.0
-                                    age_11=0.0
-                                    age_12=0.0
-                                    age_13=0.0
                                 elif h4bb=="8":
-                                    age_2=0.0
-                                    age_3=0.0
-                                    age_4=0.0
-                                    age_5=0.0
-                                    age_6=0.0
-                                    age_7=0.0
                                     age_8=1.0
-                                    age_9=0.0
-                                    age_10=0.0
-                                    age_11=0.0
-                                    age_12=0.0
-                                    age_13=0.0
                                 elif h4bb=="9":
-                                    age_2=0.0
-                                    age_3=0.0
-                                    age_4=0.0
-                                    age_5=0.0
-                                    age_6=0.0
-                                    age_7=0.0
-                                    age_8=0.0
                                     age_9=1.0
-                                    age_10=0.0
-                                    age_11=0.0
-                                    age_12=0.0
-                                    age_13=0.0
                                 elif h4bb=="10":
-                                    age_2=0.0
-                                    age_3=0.0
-                                    age_4=0.0
-                                    age_5=0.0
-                                    age_6=0.0
-                                    age_7=0.0
-                                    age_8=0.0
-                                    age_9=0.0
                                     age_10=1.0
-                                    age_11=0.0
-                                    age_12=0.0
-                                    age_13=0.0
                                 elif h4bb=="11":
-                                    age_2=0.0
-                                    age_3=0.0
-                                    age_4=0.0
-                                    age_5=0.0
-                                    age_6=0.0
-                                    age_7=0.0
-                                    age_8=0.0
-                                    age_9=0.0
-                                    age_10=0.0
                                     age_11=1.0
-                                    age_12=0.0
-                                    age_13=0.0
                                 elif h4bb=="12":
-                                    age_2=0.0
-                                    age_3=0.0
-                                    age_4=0.0
-                                    age_5=0.0
-                                    age_6=0.0
-                                    age_7=0.0
-                                    age_8=0.0
-                                    age_9=0.0
-                                    age_10=0.0
-                                    age_11=0.0
                                     age_12=1.0
-                                    age_13=0.0
                                 elif h4bb=="13":
-                                    age_2=0.0
-                                    age_3=0.0
-                                    age_4=0.0
-                                    age_5=0.0
-                                    age_6=0.0
-                                    age_7=0.0
-                                    age_8=0.0
-                                    age_9=0.0
-                                    age_10=0.0
-                                    age_11=0.0
-                                    age_12=0.0
                                     age_13=1.0
                                 else:
                                     print(pro[1])
@@ -411,50 +239,34 @@ for year in (range(2020, 2021)):#年
                                     soup7=BeautifulSoup(html7.text,'html.parser')
                                     h23a=soup7.find_all('td')[10].text
                                     h23=h23a.strip("％")
-                                    
-
-
+                                
+                                h4a_a=0.0;
+                                h4a_b=0.0;
+                                h4a_c=0.0;
                                 if h4a=="牡":
                                     h4a_a=1.0;
-                                    h4a_b=0.0;
-                                    h4a_c=0.0;
                                 elif h4a[0]=="牝":
-                                    h4a_a=0.0;
                                     h4a_b=1.0;
-                                    h4a_c=0.0;
                                 elif h4a[0]=="セ":
-                                    h4a_a=0.0;
-                                    h4a_b=0.0;
                                     h4a_c=1.0;
 
                                 else:
                                     print(data111)
 
-
+                                r3_a=0.0
+                                r3_b=0.0
+                                r3_c=0.0
+                                r3_d=0.0
                                 if r3[-1]=="良":
                                     r3_a=1.0
-                                    r3_b=0.0
-                                    r3_c=0.0
-                                    r3_d=0.0
                                 elif r3[-1]=="稍":
-                                    r3_a=0.0
                                     r3_b=1.0
-                                    r3_c=0.0
-                                    r3_d=0.0
                                 elif r3[-1]=="重":
-                                    r3_a=0.0
-                                    r3_b=0.0
                                     r3_c=1.0
-                                    r3_d=0.0
                                 elif r3[-1]=="不":
-                                    r3_a=0.0
-                                    r3_b=0.0
-                                    r3_c=0.0
                                     r3_d=1.0
                                 else:
                                     print(data88[111]);
-
-
 
                                 if r4=="芝":
                                     r4_a=1.0
@@ -465,54 +277,26 @@ for year in (range(2020, 2021)):#年
                                 else:
                                     print(data88[111]);
 
-
-
+                                r7_a=0.0
+                                r7_b=0.0
+                                r7_c=0.0
+                                r7_d=0.0
+                                r7_e=0.0
+                                r7_f=0.0
                                 if r3[-2]=="晴":
                                     r7_a=1.0
-                                    r7_b=0.0
-                                    r7_c=0.0
-                                    r7_d=0.0
-                                    r7_e=0.0
-                                    r7_f=0.0
                                 elif r3[-2]=="曇":
-                                    r7_a=0.0
                                     r7_b=1.0
-                                    r7_c=0.0
-                                    r7_d=0.0
-                                    r7_e=0.0
-                                    r7_f=0.0
                                 elif r3[-2]=="小雨":
-                                    r7_a=0.0
-                                    r7_b=0.0
                                     r7_c=1.0
-                                    r7_d=0.0
-                                    r7_e=0.0
-                                    r7_f=0.0
                                 elif r3[-2]=="雨":
-                                    r7_a=0.0
-                                    r7_b=0.0
-                                    r7_c=0.0
                                     r7_d=1.0
-                                    r7_e=0.0
-                                    r7_f=0.0
                                 elif r3[-2]=="小雪":
-                                    r7_a=0.0
-                                    r7_b=0.0
-                                    r7_c=0.0
-                                    r7_d=0.0
                                     r7_e=1.0
-                                    r7_f=0.0
                                 elif r3[-2]=="雪":
-                                    r7_a=0.0
-                                    r7_b=0.0
-                                    r7_c=0.0
-                                    r7_d=0.0
-                                    r7_e=0.0
                                     r7_f=1.0
                                 else:
                                     print(data88[111]);
-
-
 
                                 #time.sleep(1)
                                 html2=requests.get(h3_u, verify=False)
@@ -693,13 +477,8 @@ for year in (range(2020, 2021)):#年
                                         h29_a=NA
                                         h29_b=NA
                                 pp=0
-                            
-                            
-                            
-
+         
                             se=pd.Series(index=columns)#Closes else:
-
-                            
 
                             if h0<=3:
                                 h30=1
